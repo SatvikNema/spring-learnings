@@ -9,6 +9,9 @@ public class MyEventListener implements ApplicationListener {
 
     @Override
     public void onApplicationEvent(ApplicationEvent applicationEvent) {
-        System.out.println(applicationEvent.toString());
+        if(applicationEvent.getSource().getClass().getName().equals("org.satvik.springDemo.demo.pojo.Triangle")) {
+            System.out.println(applicationEvent.toString());
+        }
+
     }
 }

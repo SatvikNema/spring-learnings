@@ -82,12 +82,12 @@ public class Triangle implements InitializingBean, DisposableBean, Shape, Applic
 
     @Override
     public void destroy() throws Exception {
-        System.out.println("called before destroying the Triangle bean!");
+//        System.out.println("called before destroying the Triangle bean!");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("called after Triangle bean is set!");
+//        System.out.println("called after Triangle bean is set!");
     }
 
     @Override
