@@ -15,6 +15,10 @@ public class LoggingAspect {
         System.out.println("getter method called for: "+joinPoint.getTarget());
     }
 
+    public void someLoggingFunction(){
+        System.out.println("logging function called!");
+    }
+
 //    @Pointcut("execution(* org.satvik..*.get*())")
 //    public void allGetter(){}
 

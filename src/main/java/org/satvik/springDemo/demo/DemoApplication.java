@@ -3,6 +3,7 @@ package org.satvik.springDemo.demo;
 import org.satvik.springDemo.demo.pojo.Point;
 import org.satvik.springDemo.demo.pojo.Shape;
 import org.satvik.springDemo.demo.pojo.Triangle;
+import org.satvik.springDemo.demo.service.FactoryService;
 import org.satvik.springDemo.demo.service.ShapeService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -31,9 +32,12 @@ public class DemoApplication {
 
 		ConfigurableApplicationContext context = SpringApplication.run(DemoApplication.class, args);
 
+		FactoryService factory = new FactoryService();
 
-		ShapeService service = (ShapeService) context.getBean("shapeService");
-		int x = service.getTriangle().getA().getY();
+		ShapeService service = (ShapeService) factory.getBean("shapeService");
+		service.getCircle();
+
+//		int x = service.getTriangle().getA().getY();
 //		service.displayDetails();
 
 	}
