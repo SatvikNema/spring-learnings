@@ -85,6 +85,31 @@
         </aop:aspect>
     </aop:config>
 
+    <bean id="datasource" class="org.apache.commons.dbcp2.BasicDataSource">
+        <property name="driverClassName" value="org.apache.derby.jdbc.ClientDriver" />
+        <property name="url" value="jdbc:derby://localhost:1527/db_test;create=true" />
+        <property name="initialSize" value="2" />
+        <property name="maxTotal" value="5" />
+    </bean>
+
+    <bean id="jdbcDaoImpl2" class="org.satvik.springDemo.demo.dao.JdbcDaoImpl2">
+        <property name="dataSource" ref="datasource"></property>
+    </bean>
+
+<!--    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">-->
+<!--        <property name="dataSource" ref="datasource"/>-->
+<!--        <property name="packagesToScan" value="org.satvik.springDemo.demo.pojo" />-->
+<!--        <property name="hibernateProperties">-->
+<!--            <props>-->
+<!--                <prop key="dialect">-->
+<!--                    org.hibernate.dialect.DerbyDialect-->
+<!--                    org.hiber-->
+<!--                </prop>-->
+<!--            </props>-->
+<!--        </property>-->
+<!--&lt;!&ndash;        <property name="databasePlatform" value="org.hibernate.dialect.DerbyDialect"/>&ndash;&gt;-->
+<!--    </bean>-->
+
     <context:annotation-config/>
 
     <context:component-scan base-package="org.satvik.springDemo.demo" />
